@@ -1,0 +1,60 @@
+﻿@page
+@model Console_Manager.Pages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Contact Manager</h1>
+
+<div>
+    <h4>Contact Details</h4>
+    <hr />
+    <div>
+        <table class="detailsTable">
+            <tr id="tableData">
+                <td id="tableData">Name:</td>
+                <td id="tableData">
+                    @Html.DisplayFor(model => model.ContactManagerModel.FirstName)
+                    @Html.DisplayFor(model => model.ContactManagerModel.LastName)
+                </td>
+            </tr>
+            <tr id="tableData">
+                <td id="tableData">Phone:</td>
+                <td id="tableData">
+                    @Html.DisplayFor(model => model.ContactManagerModel.Phone)
+                </td>
+            </tr>
+            <tr id="tableData">
+                <td id="tableData">Email:</td>
+                <td id="tableData">
+                    @Html.DisplayFor(model => model.ContactManagerModel.Email)
+                </td>
+            </tr>
+            <tr id="tableData">
+                <td id="tableData">Category:</td>
+                <td id="tableData">
+                    @Html.DisplayFor(model => model.ContactManagerModel.Category)
+                </td>
+            </tr>
+            <tr id="tableData">
+                <td id="tableData">Organization:</td>
+                <td id="tableData">
+                    @Html.DisplayFor(model => model.ContactManagerModel.Organization)
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+<div class="form-group">
+    <a asp-page="./Edit" asp-route-id="@Model.ContactManagerModel.ContactID">
+        <input type="button" value="Edit" class="btn btn-primary" />
+    </a>
+    <a asp-page="./Delete" asp-route-id="@Model.ContactManagerModel.ContactID">
+        <input type="button" value="Delete" class="btn btn-primary" />
+    </a>
+    <a asp-page="./Index">
+        <input type="button" value="Home" class="btn btn-primary" />
+    </a>
+</div>

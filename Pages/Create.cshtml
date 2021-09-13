@@ -1,0 +1,59 @@
+﻿@page
+@model Console_Manager.Pages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Contact Manager</h1>
+
+<h4>Add Contact</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ContactManagerModel.FirstName" class="control-label">First Name</label>
+                <input asp-for="ContactManagerModel.FirstName" class="form-control" />
+                <span asp-validation-for="ContactManagerModel.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactManagerModel.LastName" class="control-label">Last Name</label>
+                <input asp-for="ContactManagerModel.LastName" class="form-control" />
+                <span asp-validation-for="ContactManagerModel.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactManagerModel.Phone" class="control-label">Phone Number</label>
+                <input asp-for="ContactManagerModel.Phone" class="form-control" />
+                <span asp-validation-for="ContactManagerModel.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactManagerModel.Email" class="control-label">Email</label>
+                <input asp-for="ContactManagerModel.Email" class="form-control" />
+                <span asp-validation-for="ContactManagerModel.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactManagerModel.Category" class="control-label">Category</label>
+                <input asp-for="ContactManagerModel.Category" class="form-control" />
+                <span asp-validation-for="ContactManagerModel.Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactManagerModel.Organization" class="control-label">Organization</label>
+                <input asp-for="ContactManagerModel.Organization" class="form-control" />
+                <span asp-validation-for="ContactManagerModel.Organization" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
